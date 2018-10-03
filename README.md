@@ -1,37 +1,49 @@
-# crawler-word-count
-Web Crawler API to count how many times a word appear in a given URL
+# WordCrawlerAPI
+Web Crawler API to count how many times a word appear in a given URL.
 
-## API
-
-This API will take a url and a word and count in the requested URL's HTML the number of matches (case sensitive)
+This API will take a url(s), a word, and will count the number of matches (case-sensitive). In other words, this API is responsible for crawling the URL(s) reported and returning a response containing a json with the number of occurrences of the reported word, per site.
 
 Example:
-`http://127.0.0.1:5000/?url=google.com&word=google&ignorecase=true`
 
-`?url=[url]` is the url to be requested
+http://127.0.0.1:5000/?url=www.pyhon.org&url=flask.pocoo.org&url=www.djangoproject.com&word=docs&ignorecase=true
 
-`&word=[word]` is the word to be searched and counted
+?url=python.org is the url to be requested
 
-`&ignorecase=true` pass this argument to match ignoring case
+&amp;word=docs is the word to be searched and counted
+
+&amp;ignorecase=true pass this argument to match ignoring case
 
 Return JSON:
 
-```json
-{
-	"http://google.com" : {
-		"google" : 83
-	}
-}
+```[
+    {
+        "http://www.pyhon.org": {
+            "docs": 13
+        }
+    },
+    {
+        "http://flask.pocoo.org": {
+            "docs": 10
+        }
+    },
+    {
+        "http://www.djangoproject.com": {
+            "docs": 16
+        }
+    }
+]
 ```
 
 ## Setup
 
-To run this script, you'll need [Python 3.x](https://www.python.org/downloads/) installed and [pip](https://pip.pypa.io/en/stable/installing/) to get the packages
+To run this script, you'll need [Python 3.x](https://www.python.org/downloads/) installed and [pip](https://pip.pypa.io/en/stable/installing/) to get the packages.
 
-Then you must get the extensions [Flask-restful](http://flask-restful-cn.readthedocs.io/en/0.3.5/installation.html) and [requests](http://docs.python-requests.org/en/master/user/install/)
+Then you must get the extensions [Flask-restful](http://flask-restful-cn.readthedocs.io/en/0.3.5/installation.html), [requests](http://docs.python-requests.org/en/master/user/install/) and [Flask-Caching](https://pythonhosted.org/Flask-Caching/).
+
+
 
 To get then you can simply open a terminal and type:
-`pip install flask-restful` and then `pip install requests`
+`pip install flask-restful` then `pip install requests` and finnaly `pip install Flask-Caching`.
 
 ## Running
 
@@ -43,9 +55,9 @@ Type `python crawler.py` and it will run the service under http://127.0.0.1:5000
 
 Then all you need to do is request the service passing the arguments:
 
-- via Browser : you can do it on your browser, just type this in the address box = `http://127.0.0.1:5000/?url=google.com&word=google`
+- via Browser : you can do it on your browser, just type this in the address box = `http://127.0.0.1:5000/?url=globo.com&url=terra.com.br&word=google`
 
-- via cURL : open another terminal and type `curl http://127.0.0.1:5000/ -d "url=google.com" -d "word=google" -X GET` 
+- via Postman : [See the documentation](https://learning.getpostman.com/docs/postman/launching_postman/installation_and_updates/)
 
 ## Testing
 
