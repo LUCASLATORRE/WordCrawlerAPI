@@ -4,7 +4,7 @@ import requests
 from flask_caching import Cache
 
 app = Flask(__name__)
-cache = Cache(app, config = {'CACHE_TYPE':'simple'}) # configurao cache 
+cache = Cache(app, config = {'CACHE_TYPE':'simple'}) # configura o cache 
 cache.init_app(app)
 api = Api(app)
 
