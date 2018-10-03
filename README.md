@@ -10,7 +10,7 @@ Example:
 
 http://127.0.0.1:5000/?url=www.pyhon.org&url=flask.pocoo.org&url=www.djangoproject.com&word=docs&ignorecase=true
 
-```?url=python.org```, ```&url=flask.pocoo.org``` and ```url=www.djangoproject.com```  are the url's to be requested
+```?url=python.org```, ```&url=flask.pocoo.org``` and ```&url=www.djangoproject.com```  are the url's to be requested
 
 ```&word=docs``` is the word to be searched and counted
 
