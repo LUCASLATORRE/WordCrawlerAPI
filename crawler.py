@@ -4,7 +4,7 @@ import requests
 from flask_caching import Cache
 
 app = Flask(__name__)
-cache = Cache(app, config = {'CACHE_TYPE':'simple'})
+cache = Cache(app, config = {'CACHE_TYPE':'simple'}) # configurao cache 
 cache.init_app(app)
 api = Api(app)
 
@@ -54,4 +54,3 @@ api.add_resource(CrawlerAPI, "/")
 
 if __name__ == '__main__':
     app.run(debug=True)
-
