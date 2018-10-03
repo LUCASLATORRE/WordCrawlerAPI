@@ -1,17 +1,20 @@
 # WordCrawlerAPI
-Web Crawler API to count how many times a word appear in a given URL.
 
-This API will take a url(s), a word, and will count the number of matches (case-sensitive). In other words, this API is responsible for crawling the URL(s) reported and returning a response containing a json with the number of occurrences of the reported word, per site.
+This API will take a url(s), a word, and will count the number of matches (case-sensitive). 
+
+### How it works
+
+This web crawler is responsible for crawling the URL(s) reported and returning a response containing a json with the number of occurrences of the reported word, per site.
 
 Example:
 
 http://127.0.0.1:5000/?url=www.pyhon.org&url=flask.pocoo.org&url=www.djangoproject.com&word=docs&ignorecase=true
 
-?url=python.org is the url to be requested
+```?url=python.org```, ```&url=flask.pocoo.org``` and ```url=www.djangoproject.com```  are the url's to be requested
 
-&amp;word=docs is the word to be searched and counted
+```&word=docs``` is the word to be searched and counted
 
-&amp;ignorecase=true pass this argument to match ignoring case
+```&ignorecase=true``` pass this argument to match ignoring case
 
 Return JSON:
 
