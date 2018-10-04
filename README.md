@@ -18,7 +18,8 @@ http://127.0.0.1:5000/?url=www.pyhon.org&url=flask.pocoo.org&url=www.djangoproje
 
 Return JSON:
 
-```[
+```
+[
     {
         "http://www.pyhon.org": {
             "docs": 13
